@@ -5,18 +5,18 @@ class fourmi{
     this.estCharge = false;
     this.image = new Image();
     this.image.addEventListener("load", evenementload => this.creerSprite(evenementload));
-    this.image.src = "illustration/fourmi.png";
+    this.image.src = "illustration/fourmi1.png";
   }
 
   creerSprite(evenementload){
-    console.log("Image fourmi.png chargée");
+    console.log("Image fourmi1.png chargée");
 
     let spriteSheetfourmi = new createjs.SpriteSheet({
       images: [this.image],
 
       frames:{
-        width: 533,
-        height: 468
+        width: 120,
+        height: 120
       },
 
       animations:{
@@ -27,13 +27,13 @@ class fourmi{
 
     this.spritefourmi = new createjs.Sprite(spriteSheetfourmi,"voler");
 
-    this.spritefourmi.scaleX = this.spritefourmi.scaleY = 0.2;
+    this.spritefourmi.scaleX = this.spritefourmi.scaleY = 1;
 
     this.spritefourmi.setBounds(
       this.spritefourmi.x,
       this.spritefourmi.y,
-      533 * 0.2,
-      468 * 0.2);
+      120 * 1,
+      120 * 1);
 
     this.estCharge = true;
     console.log("Spritefourmi créée");
