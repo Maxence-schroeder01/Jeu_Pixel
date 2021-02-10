@@ -6,7 +6,7 @@ class fourmi{
     this.estCharge = false;
     this.image = new Image();
     this.image.addEventListener("load", evenementload => this.creerSprite(evenementload));
-    this.image.src = "illustration/fourmi1.png";
+    this.image.src = "illustration/Lightning.png";
   }
 
   creerSprite(evenementload){
@@ -16,26 +16,26 @@ class fourmi{
       images: [this.image],
 
       frames:{
-        width: 120,
-        height: 120
+        width: 32,
+        height: 32.4
       },
 
       animations:{
-        marcher: [0,1]
+        marcher: [0,1,2]
       }
     });
     console.log("SpriteSheetfourmi créée");
 
     this.spritefourmi = new createjs.Sprite(spriteSheetfourmi,"marcher");
-    this.spritefourmi.framerate = 5;
+    this.spritefourmi.framerate = 7;
 
-    this.spritefourmi.scaleX = this.spritefourmi.scaleY = 1;
+    this.spritefourmi.scaleX = this.spritefourmi.scaleY = 2;
 
     this.spritefourmi.setBounds(
       this.spritefourmi.x,
       this.spritefourmi.y,
-      120 * 1,
-      120 * 1);
+      200 * 2,
+      200 * 2);
 
     this.estCharge = true;
     console.log("Spritefourmi créée");
@@ -44,7 +44,7 @@ class fourmi{
 
   afficher(){
     this.spritefourmi.x = 200;
-    this.spritefourmi.y = 600;
+    this.spritefourmi.y = 250;
     this.scene.addChild(this.spritefourmi);
     console.log("Spritefourmi ajoutée à la scène");
 
@@ -54,15 +54,15 @@ class fourmi{
   }
 
   reculer(secondeEcoulee){
-    this.spritefourmil.x = this.limiterMouvement(this.spritefourmi.x - fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee, this.spritefourmi.y).x;
+    this.spritefourmi.x = this.limiterMouvement(this.spritefourmi.x - fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee, this.spritefourmi.y).x;
   }
 
   monter(secondeEcoulee){
-    this.spritefourmil.y = this.limiterMouvement(this.spritefourmi.x, this.spritefourmi.y - fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee).y;
+    this.spritefourmi.y = this.limiterMouvement(this.spritefourmi.x, this.spritefourmi.y - fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee).y;
   }
 
   descendre(secondeEcoulee){
-    this.spritefourmi.y = this.limiterMouvement(this.spritefourmil.x, this.spritefourmi.y + fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee).y;
+    this.spritefourmi.y = this.limiterMouvement(this.spritefourmi.x, this.spritefourmi.y + fourmi.VITESSE_PIXEL_SECONDE * secondeEcoulee).y;
   }
 
   limiterMouvement(testX, testY){
@@ -125,8 +125,15 @@ class fourmi{
         break;
     }
   }
+determinerRectangleOccupe(){
+  return {
+    x: this.spritefourmi.x,
+    y: this.spritefourmi.y,
+    largeur: this.spritefourmi.getBounds().width,
+    hauteur: this.spritefourmi.getBounds().height
+  };
 }
-
+}
 fourmi.ETAT = {
   ATTENTE : 0,
   MOUVEMENT_A_DROITE : 1,

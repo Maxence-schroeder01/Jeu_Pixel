@@ -2,9 +2,9 @@ class pomme{
     constructor(scene){
       this.scene = scene;
       this.pomme = new createjs.Shape();
-      this.pomme.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-      this.pomme.x = 100;
-      this.pomme.y = 100;
+      this.pomme.graphics.beginFill("blue").drawCircle(0, 0, 70);
+      this.pomme.x = 500;
+      this.pomme.y = 500;
     }
   
     afficher(){
@@ -19,4 +19,12 @@ class pomme{
         this.pomme.x += deltaX/2;
         this.pomme.y += deltaY/2;
       }
-  }
+      determinerCercleOccupe(){
+        return {
+          x: this.pomme.x,
+          y: this.pomme.y,
+          rayon: this.rayon
+        };
+      }
+}
+    
