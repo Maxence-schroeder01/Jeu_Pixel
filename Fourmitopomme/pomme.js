@@ -1,30 +1,44 @@
-class pomme{
-    constructor(scene){
-      this.scene = scene;
-      this.pomme = new createjs.Shape();
-      this.pomme.graphics.beginFill("blue").drawCircle(0, 0, 70);
-      this.pomme.x = 500;
-      this.pomme.y = 500;
-    }
-  
-    afficher(){
-      console.log("pomme ajoutée à la scène");
-      this.scene.addChild(this.pomme);
-      this.scene.update();
-    }
-    suivre(x, y){
-        var deltaX = x - this.pomme.x;
-        var deltaY = y - this.pomme.y;
-    
-        this.pomme.x += deltaX/2;
-        this.pomme.y += deltaY/2;
-      }
-      determinerCercleOccupe(){
-        return {
-          x: this.pomme.x,
-          y: this.pomme.y,
-          rayon: this.rayon
-        };
-      }
+var Arbre = function(scene, position){
+
+  var image;
+  var bitmap;
+  var charge;
+
+  var initialiser = function(){
+    image = new Image();
+    image.onload = creerBitmap;
+    image.src = "illustration/souris.png";
+    charge = false;
+  }
+
+  var creerBitmap = function(evenementOnload){
+    console.log("poteau-->creerBitmap");
+    bitmap = new createjs.Bitmap(image)
+    bitmap.x = position.x;
+    bitmap.y = position.y;
+    charge = true;
+  }
+
+  this.estCharge = function(){
+    return charge;
+  }
+
+  this.afficher = function(){
+    console.log("poteau-->afficher");
+    scene.addChild(bitmap);
+  }
+
+  this.getRectangle = function(){
+    var rectangle = {
+      x: bitmap.x,
+      y: bitmap.y,
+      width: image.width,
+      height: image.height
+    };
+
+    return rectangle;
+  }
+
+  initialiser();
+
 }
-    

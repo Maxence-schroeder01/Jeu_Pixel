@@ -2,23 +2,47 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Fourmitopomme</title>
+	<title>Jeu en Java</title>
     <script src="librairie/easeljs-0.8.2.min.js"></script>
-    <script src="pomme.js"></script>
-    <script src="arbre.js"></script>
-    <script src="fourmi.js"></script>
-    <script src="back.js"></script>
-    <script defer src="App.js"></script>
-    <style>
-      html{background-color:rgb(51, 44, 44);}
-      #dessin{background-color:white;}
-
-      body{margin:0;padding:0;}
-
-    </style>
+    <script src="Pomme.js"></script>
+    <script src="Arbre.js"></script>
+    <script src="Fourmi.js"></script>
+    <script src="Back.js"></script>
+    <script src="Game.js"></script>
+    <script src="Fin.js"></script>
+    <script src="Acceuil.js"></script>
+    <script src="Menu.js"></script>
+    <script src="Application.js"></script>
 </head>
 <body>
-  <canvas id="dessin" width="800" height="500"></canvas>
+<script type="plain/text" id="page-accueil">
+  <div>
+    <h1>Acceuil du jeu</h1>
+    <p>
+      Bienvenue sur mon jeu dans l'espace !! 
+    </p>
+    <form id="formulaire-joueur">
+      <label>Entrer votre nom</label>
+      <input type="text" id="nom-joueur"/>
+      <input type="submit" id="enregistrer-joueur"/>
+    </form>
+    <a href="#jouer">Jouer</a>
+  </div>
+  </script>
+  <script type="plain/text" id="page-jeu">
+    <canvas id="dessin" width="600" height="400"></canvas>
+      <a href="#accueil">Accueil</a>
+      <a href="#fin-partie-gagnee">Fin partie gagnée</a>
+      <a href="#fin-partie-perdue">Fin partie perdue</a>
+    </script>
+    
+    <script type="plain/text" id="page-fin">
+    <div>
+      <h1>Fin de la partie</h1>
+      <h2>{texte-fin-partie}</h2>
+      <a href="#accueil">Accueil</a>
+    </div>
+    </script>
 </body>
 </html>
 
