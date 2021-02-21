@@ -1,46 +1,30 @@
 ﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Jeu en Java</title>
+	<title>Jeu en javascript</title>
     <script src="librairie/easeljs-0.8.2.min.js"></script>
-    <script src="Pomme.js"></script>
-    <script src="Arbre.js"></script>
-    <script src="Fourmi.js"></script>
-    <script src="Back.js"></script>
-    <script src="Game.js"></script>
-    <script src="Fin.js"></script>
-    <script src="Acceuil.js"></script>
-    <script src="Menu.js"></script>
-    <script src="Application.js"></script>
+    <script src="Souris.js"></script>
+    <script src="Ennemie.js"></script>
+    <script src="Player.js"></script>
+    <script src="Rocket.js"></script>
+    <script src="ArrierePlan.js"></script>
+    <script defer src="Application.js"></script>
+    <style>
+      html{overflow: hidden; background-color:red;}
+      #dessin{background-color:white;}
+
+      body{overflow: hidden; margin:0;padding:0;}
+
+    </style>
 </head>
 <body>
-<script type="plain/text" id="page-accueil">
-  <div>
-    <h1>Welcome</h1>
-    <h2>
-      Bienvenue sur mon jeu dans l'espace !! 
-    </h2>
-    <a href="#jouer">Jouer</a>
-  </div>
-  </script>
-  <script type="plain/text" id="page-jeu">
-    <canvas id="dessin" width="600" height="400"></canvas>
-      <a href="#accueil">Accueil</a>
-      <a href="#fin-partie-gagnee">Fin partie gagnée</a>
-      <a href="#fin-partie-perdue">Fin partie perdue</a>
-    </script>
-    
-    <script type="plain/text" id="page-fin">
-    <div>
-      <h1>Fin de la partie</h1>
-      <h2>{texte-fin-partie}</h2>
-      <a href="#accueil">Accueil</a>
-    </div>
-    </script>
+  <h1>Si votre vaiseau à disparu vous avez perdu</h1>
+  <button onClick="window.location.reload();">Recharge le Jeu</button>
+  <canvas id="dessin" width="600" height="400"></canvas>
 </body>
 </html>
-
 
 
 
