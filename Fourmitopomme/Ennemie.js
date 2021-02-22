@@ -44,7 +44,7 @@
     this.spriteEnnemie.visible = false;
   }
   afficher(){
-    this.spriteEnnemie.x = 2000;
+    this.spriteEnnemie.x = 5000;
     this.spriteEnnemie.y = 800;
     this.scene.addChild(this.spriteEnnemie);
     console.log("SpriteEnnemie  ajoutée à la scène");
@@ -62,4 +62,4 @@
     };
   }
 }
-Ennemie.VITESSE_PIXEL_SECONDE = 5;
+Ennemie.VITESSE_PIXEL_SECONDE = 100;
