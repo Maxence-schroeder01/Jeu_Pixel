@@ -22,9 +22,9 @@ class Rocket{
     console.log("Image missile chargée");
   }
 
-  afficher(){
-    this.missile.x = this.player.determinerRectangleOccupe().x;
-    this.missile.y = this.player.determinerRectangleOccupe().y;
+  afficher(rocket){
+    this.missile.x = rocket.x + 100;
+    this.missile.y = rocket.y + 55;
     this.scene.addChild(this.missile);
     if (this.shoot == true) {
       this.tirer(secondeEcoulee)
@@ -34,12 +34,11 @@ class Rocket{
 
 
   tirer(secondeEcoulee){
-    this.missile.x -= Rocket.VITESSE_PIXEL_SECONDE * secondeEcoulee;
-    console.log("FEU");
+    this.missile.x += Rocket.VITESSE_PIXEL_SECONDE * secondeEcoulee;
   }
 
 
-  determinerRectangleOccupeMissile(){
+  determinerRectangleOccupe(){
     return {
       x: this.missile.x,
       y: this.missile.y,
@@ -48,4 +47,4 @@ class Rocket{
     };
   }
 }
-Rocket.VITESSE_PIXEL_SECONDE_MISSILE = 300000000;
+Rocket.VITESSE_PIXEL_SECONDE = 9000;

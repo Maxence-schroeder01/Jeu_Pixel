@@ -33,14 +33,16 @@
     this.spriteEnnemie.setBounds(
       this.spriteEnnemie.x,
       this.spriteEnnemie.y,
-      100 * 0.5,
-      100 * 0.5);
+      32 * 4,
+      32 * 4);
 
     this.estCharge = true;
     console.log("SpriteEnnemie créée");
 
   }
-
+  invisible(){
+    this.spriteEnnemie.visible = false;
+  }
   afficher(){
     this.spriteEnnemie.x = 2000;
     this.spriteEnnemie.y = 800;

@@ -36,8 +36,8 @@ class Player{
     this.spritePlayer.setBounds(
       this.spritePlayer.x,
       this.spritePlayer.y,
-      100 * 0.5,
-      100 * 0.5);
+      32 * 4,
+      32 * 4);
 
     this.estCharge = true;
     console.log("SpritePlayer créée");

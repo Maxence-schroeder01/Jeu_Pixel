@@ -2,7 +2,7 @@ class Souris{
   constructor(scene){
     this.scene = scene;
     this.souris = new createjs.Shape();
-    this.rayon = 50;
+    this.rayon = 10;
     this.souris.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, this.rayon);
     this.souris.x = 100;
     this.souris.y = 100;
